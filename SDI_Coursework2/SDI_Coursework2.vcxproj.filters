@@ -24,7 +24,7 @@
     <ClCompile Include="Project.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TicketBox.cpp">
+    <ClCompile Include="ConsoleUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,11 +32,16 @@
     <ClInclude Include="Materials.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TicketBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Project.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ConsoleUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\data.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
