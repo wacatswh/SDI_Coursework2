@@ -3,6 +3,16 @@
 
 using namespace std;
 
+enum class Package
+{
+	SingleSidedDVD, DoubleSidedDVD, ComboBox, VHS, BluRay
+};
+
+enum class AudioFormat
+{
+	Dolby, DolbyDigital, MPEG1, PCM, DTS
+};
+
 class Materials : public Project
 {
 public:
@@ -12,27 +22,27 @@ public:
 	// ******* NEEDS TOUCH UP ON CERTAIN VARIABLES IN RESPECT TO BUSINESS REQUIREMENT
 
 	// getter and setter
-	void setIdNumber(string IdNumber);
+	void setIdNumber(string _idNumber);
 	string getIdNumber();
-	void setFilmTitle(string filmTitle);
+	void setFilmTitle(string _filmTitle);
 	string getFilmTitle();
-	void setFormat(string format);
+	void setFormat(string _format);
 	string getFormat();
-	void setAudioFormat(AudioFormat audioFormat);
+	void setAudioFormat(AudioFormat _audioFormat);
 	AudioFormat getAudioFormat();
-	void setRuntime(float runtime);
+	void setRuntime(float _runtime);
 	float getRuntime();
-	void setLanguage(string language);
+	void setLanguage(string _language);
 	string getLanguage();
-	void setRetailPrice(float retailPrice);
+	void setRetailPrice(float _retailPrice);
 	float getRetailPrice();
-	void setSubtitles(string subtitles);
+	void setSubtitles(string _subtitles);
 	string getSubtitles();
-	void setFrameAspect(float frameAspect);
+	void setFrameAspect(float _frameAspect);
 	float getFrameAspect();
 
 private:
-	string IdNumber;
+	string idNumber;
 	string filmTitle;
 	string format;
 	AudioFormat audioFormat;
@@ -43,12 +53,3 @@ private:
 	float frameAspect;
 };
 
-enum class Package
-{
-	SingleSidedDVD, DoubleSidedDVD, ComboBox, VHS, BluRay
-};
-
-enum class AudioFormat
-{
-	Dolby, DolbyDigital, MPEG1, PCM, DTS
-};

@@ -3,24 +3,24 @@ class ConsoleUI
 {
 public:
 	// functions run when system start up and shut down
-	void readFromFile();
-	void writeToFile();
+	static void readFromFile();
+	static void writeToFile();
 
 	// features show to user on general screen 
+	static void showMenu(); // the main menu UI
 
-	void searchProject(); // provide to view related materials
-	void searchByAuthor();
-	void maintenanceMode(); // show below features when called
+	static void searchProject(); // provide to view related materials
+	static void searchByAuthor(); // search by name of author
+	static void maintenanceMode(); // show below features when called
 
 	// below are features in maintenance mode 
-
-	void createProject();
-	void createMaterial();
-	void updateProject();
-	void updateMaterial();
-	void removeProject();
-	void removeMaterial();
-	void productDailyReport(); // produce daily reports on projects with certain amount of box earning
+	static void createProject();
+	static void createMaterial();
+	static void updateProject();
+	static void updateMaterial();
+	static void removeProject();
+	static void removeMaterial();
+	static void produceDailyReport(); // produce daily reports on projects with certain amount of box earning
 
 private:
 

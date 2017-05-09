@@ -3,6 +3,11 @@
 
 using namespace std;
 
+enum class Genre
+{
+	Action, Fantasy, Horror, Love, Musical, Sport, Others
+};
+
 class Project
 {
 public:
@@ -10,41 +15,41 @@ public:
 	~Project();
 
 	// getter and setter for project details
-	void setTitle(string title);
+	void setTitle(string _title);
 	string getTitle();
-	void setSummary(string summary);
+	void setSummary(string _summary);
 	string getSummary();
-	void setGenre(Genre genre);
+	void setGenre(Genre _genre);
 	Genre getGenre();
-	void setDate(string date);
+	void setDate(string _date);
 	string getDate();
 	// setFilmingLocations
 	// getFilmingLocations
-	void setLanguage(string language);
+	void setLanguage(string _language);
 	string getLanguage();
-	void setRuntime(float runtime);
-	float getRuntime();
+	void setRuntime(unsigned _runtime);
+	unsigned getRuntime();
 	// setKeywords
 	// getKeywords
-	void setWeeklyTicketSales(float weeklyTicketSales);
-	float getWeeklyTicketSales();
+	void setWeeklyTicketSales(unsigned _weeklyTicketSales);
+	unsigned getWeeklyTicketSales();
 
 	// getter and setter for crew
-	void setProducer(string producer);
+	void setProducer(string _producer);
 	string getProducer();
-	void setDirector(string director);
+	void setDirector(string _director);
 	string getDirector();
-	void setWriter(string writer);
+	void setWriter(string _writer);
 	string getWriter();
 	// getCast()
 	// setCast()
-	void setEditor(string editor);
+	void setEditor(string _editor);
 	string getEditor();
-	void setProductionDesigner(string productionDesigner);
+	void setProductionDesigner(string _productionDesigner);
 	string getProductionDesigner();
-	void setSetDecorator(string setDecorator);
+	void setSetDecorator(string _setDecorator);
 	string getSetDecorator();
-	void setCostumeDesigner(string costumeDesigner);
+	void setCostumeDesigner(string _costumeDesigner);
 	string getCostumeDesigner();
 
 private:
@@ -55,9 +60,9 @@ private:
 	string date;
 	vector<string> filmingLocations;
 	string language;
-	float runtime;
+	unsigned runtime;
 	vector<string> keywords;
-	float weeklyTicketSales;
+	unsigned weeklyTicketSales;
 
 	// variables for crew
 	string producer;
@@ -71,7 +76,3 @@ private:
 
 };
 
-enum class Genre
-{
-	Action, Fantasy, Horror, Love, Musical, Sport, Others
-};

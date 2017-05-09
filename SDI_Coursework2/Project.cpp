@@ -12,129 +12,142 @@ Project::~Project()
 
 }
 
-void Project::setTitle(string title)
+void Project::setTitle(string _title)
 {
+	title = _title;
 }
 
 string Project::getTitle()
 {
-	return string();
+	return title;
 }
 
-void Project::setSummary(string summary)
+void Project::setSummary(string _summary)
 {
+	summary = _summary;
 }
 
 string Project::getSummary()
 {
-	return string();
+	return summary;
 }
 
-void Project::setGenre(Genre genre)
+void Project::setGenre(Genre _genre)
 {
+	genre = _genre;
 }
 
 Genre Project::getGenre()
 {
-	return Genre();
+	return genre;
 }
 
-void Project::setDate(string date)
+void Project::setDate(string _date)
 {
+	date = _date;
 }
 
 string Project::getDate()
 {
-	return string();
+	return date;
 }
 
-void Project::setLanguage(string language)
+void Project::setLanguage(string _language)
 {
+	language = _language;
 }
 
 string Project::getLanguage()
 {
-	return string();
+	return language;
 }
 
-void Project::setRuntime(float runtime)
+void Project::setRuntime(unsigned _runtime)
 {
+	runtime = _runtime;
 }
 
-float Project::getRuntime()
+unsigned Project::getRuntime()
 {
-	return 0.0f;
+	return runtime;
 }
 
-void Project::setWeeklyTicketSales(float weeklyTicketSales)
+void Project::setWeeklyTicketSales(unsigned _weeklyTicketSales)
 {
+	weeklyTicketSales = _weeklyTicketSales;
 }
 
-float Project::getWeeklyTicketSales()
+unsigned Project::getWeeklyTicketSales()
 {
-	return 0.0f;
+	return weeklyTicketSales;
 }
 
-void Project::setProducer(string producer)
+void Project::setProducer(string _producer)
 {
+	producer = _producer;
 }
 
 string Project::getProducer()
 {
-	return string();
+	return producer;
 }
 
-void Project::
-setDirector(string director)
+void Project::setDirector(string _director)
 {
+	director = _director;
 }
 
 string Project::getDirector()
 {
-	return string();
+	return director;
 }
 
-void Project::setWriter(string writer)
+void Project::setWriter(string _writer)
 {
+	writer = _writer;
 }
 
 string Project::getWriter()
 {
-	return string();
+	return writer;
 }
 
-void Project::setEditor(string editor)
+void Project::setEditor(string _editor)
 {
+	editor = _editor;
 }
 
 string Project::getEditor()
 {
-	return string();
+	return editor;
 }
 
-void Project::setProductionDesigner(string productionDesigner)
+void Project::setProductionDesigner(string _productionDesigner)
 {
+	productionDesigner = _productionDesigner;
 }
 
 string Project::getProductionDesigner()
 {
-	return string();
+	return productionDesigner;
 }
 
-void Project::setSetDecorator(string setDecorator)
+void Project::setSetDecorator(string _setDecorator)
 {
+	setDecorator = _setDecorator;
 }
 
 string Project::getSetDecorator()
 {
-	return string();
+	return setDecorator;
 }
 
-void Project::setCostumeDesigner(string costumeDesigner)
+void Project::setCostumeDesigner(string _costumeDesigner)
 {
+	costumeDesigner = _costumeDesigner;
 }
 
 string Project::getCostumeDesigner()
 {
-	return string();
+	return costumeDesigner;
 }
