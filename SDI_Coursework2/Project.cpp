@@ -1,4 +1,6 @@
 #include "Project.h"
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -52,6 +54,16 @@ string Project::getDate()
 	return date;
 }
 
+void Project::setFilmingLocation(string _filmingLocation)
+{
+	filmingLocation = _filmingLocation;
+}
+
+string Project::getFilmingLocation()
+{
+	return filmingLocation;
+}
+
 void Project::setLanguage(string _language)
 {
 	language = _language;
@@ -70,6 +82,38 @@ void Project::setRuntime(unsigned _runtime)
 unsigned Project::getRuntime()
 {
 	return runtime;
+}
+
+void Project::setKeywords(vector<string> &tempKeywords)
+{
+	keywords = tempKeywords;
+}
+
+string Project::getKeywords()
+{
+	string keywordString;
+
+	// convert vector into single string
+	for (int i = 0; i < keywords.size(); i++)
+	{
+		if (i == 0)
+			keywordString = keywords[i];
+
+		else
+			keywordString + ", " + keywords[i];
+	}
+
+	return keywordString;
+}
+
+void Project::setStatus(Status _status)
+{
+	status = _status;
+}
+
+Status Project::getStatus()
+{
+	return status;
 }
 
 void Project::setWeeklyTicketSales(unsigned _weeklyTicketSales)
@@ -110,6 +154,28 @@ void Project::setWriter(string _writer)
 string Project::getWriter()
 {
 	return writer;
+}
+
+void Project::setCast(vector<string> &tempCast)
+{
+	cast = tempCast;
+}
+
+string Project::getCast()
+{
+	string castString;
+
+	// convert vector into single string
+	for (int i = 0; i < cast.size(); i++)
+	{
+		if (i == 0)
+			castString = keywords[i];
+
+		else
+			castString + ", " + keywords[i];
+	}
+
+	return castString;
 }
 
 void Project::setEditor(string _editor)

@@ -5,7 +5,12 @@ using namespace std;
 
 enum class Genre
 {
-	Action, Fantasy, Horror, Love, Musical, Sport, Others
+	Action, Horror, Love, Sport, Others
+};
+
+enum class Status
+{
+	Unreleased, Now_Playing, Released
 };
 
 class Project
@@ -23,14 +28,16 @@ public:
 	Genre getGenre();
 	void setDate(string _date);
 	string getDate();
-	// setFilmingLocations
-	// getFilmingLocations
+	void setFilmingLocation(string _filmingLocation);
+	string getFilmingLocation();
 	void setLanguage(string _language);
 	string getLanguage();
 	void setRuntime(unsigned _runtime);
 	unsigned getRuntime();
-	// setKeywords
-	// getKeywords
+	void Project::setKeywords(vector<string> &tempKeywords);
+	string getKeywords(); // return as string instead of vector of string
+	void setStatus(Status _status);
+	Status getStatus();
 	void setWeeklyTicketSales(unsigned _weeklyTicketSales);
 	unsigned getWeeklyTicketSales();
 
@@ -41,8 +48,8 @@ public:
 	string getDirector();
 	void setWriter(string _writer);
 	string getWriter();
-	// getCast()
-	// setCast()
+	void setCast(vector<string> &tempCast); // handle input inside method 
+	string getCast(); // return as string instead of vector
 	void setEditor(string _editor);
 	string getEditor();
 	void setProductionDesigner(string _productionDesigner);
@@ -58,10 +65,11 @@ private:
 	string summary;
 	Genre genre;
 	string date;
-	vector<string> filmingLocations;
+	string filmingLocation;
 	string language;
 	unsigned runtime;
 	vector<string> keywords;
+	Status status = Status::Released; // pre-assumed to be released
 	unsigned weeklyTicketSales;
 
 	// variables for crew

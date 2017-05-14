@@ -13,11 +13,11 @@ enum class AudioFormat
 	Dolby, DolbyDigital, MPEG1, PCM, DTS
 };
 
-class Materials : public Project
+class Material : public Project
 {
 public:
-	Materials();
-	~Materials();
+	Material();
+	~Material();
 
 	// ******* NEEDS TOUCH UP ON CERTAIN VARIABLES IN RESPECT TO BUSINESS REQUIREMENT
 

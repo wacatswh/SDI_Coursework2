@@ -147,17 +147,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleUI.cpp" />
-    <ClCompile Include="Materials.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="Project.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleUI.h" />
-    <ClInclude Include="Materials.h" />
+    <ClInclude Include="GlobalData.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="Project.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="data\data.txt" />
+    <Text Include="dataMaterial.txt" />
+    <Text Include="data\dataProject.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
