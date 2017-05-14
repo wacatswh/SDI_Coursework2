@@ -5,15 +5,15 @@ using namespace std;
 
 enum class Package
 {
-	SingleSidedDVD, DoubleSidedDVD, ComboBox, VHS, BluRay
+	SingleSided_DVD, DoubleSided_DVD, ComboBox, VHS, BluRay, Others
 };
 
 enum class AudioFormat
 {
-	Dolby, DolbyDigital, MPEG1, PCM, DTS
+	Dolby, Dolby_Digital, MPEG_1, PCM, DTS, Others
 };
 
-class Material : public Project
+class Material
 {
 public:
 	Material();
@@ -40,6 +40,8 @@ public:
 	string getSubtitles();
 	void setFrameAspect(float _frameAspect);
 	float getFrameAspect();
+	void setPackage(Package _package);
+	Package getPackage();
 
 private:
 	string idNumber;
@@ -51,5 +53,6 @@ private:
 	float retailPrice;
 	string subtitles;
 	float frameAspect;
+	Package package;
 };
 

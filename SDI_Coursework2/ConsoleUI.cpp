@@ -90,8 +90,9 @@ void ConsoleUI::searchProject()
 
 		cout << "Please enter title of Project: ";
 		string tempInput;
-		
-		// continue the codes
+		getline(cin, tempInput);
+
+		// continue the codes for searching by project title
 	} while (runFlag);
 }
 
@@ -103,8 +104,9 @@ void ConsoleUI::searchByAuthor()
 
 		cout << "Please enter name of Author: ";
 		string tempInput;
+		getline(cin, tempInput);
 
-		// continue the codes
+		// continue the codes for search by author name
 	} while (runFlag);
 }
 
@@ -117,12 +119,11 @@ void ConsoleUI::maintenanceMode()
 		cout << "-----------------\n";
 		cout << "Please Select An Option: (Followed by Pressing 'Enter')\n";
 		cout << "1) Create Project\n";
-		cout << "2) Create Material\n";
-		cout << "3) Update Project\n";
-		cout << "4) Update Material\n";
-		cout << "5) Remove Project\n";
-		cout << "6) Remove Material\n";
-		cout << "7) Produce Daily Report\n";
+		cout << "2) Update Project\n";
+		cout << "3) Update Material\n";
+		cout << "4) Remove Project\n";
+		cout << "5) Remove Material\n";
+		cout << "6) Produce Daily Report\n";
 		cout << "0) Quit Program and Save\n";
 
 		int tempInput;
@@ -134,21 +135,18 @@ void ConsoleUI::maintenanceMode()
 			createProject();
 			break;
 		case 2:
-			createMaterial();
-			break;
-		case 3:
 			updateProject();
 			break;
-		case 4:
+		case 3:
 			updateMaterial();
 			break;
-		case 5:
+		case 4:
 			removeProject();
 			break;
-		case 6:
+		case 5:
 			removeMaterial();
 			break;
-		case 7:
+		case 6:
 			produceDailyReport();
 			break;
 		case 0:
@@ -325,13 +323,127 @@ void ConsoleUI::createProject()
 	getline(cin, tempCostumeDesigner);
 	tempProject.setCostumeDesigner(tempCostumeDesigner);
 
+	// Projects with status Released can input material
+	if (tempProject.getStatus() == Status::Released)
+		createMaterial(tempProject);
+
 	// AT THE END
 	projects.push_back(tempProject);
 }
 
-void ConsoleUI::createMaterial()
+void ConsoleUI::createMaterial(Project &tempProject)
 {
+	system("cls");
+	cout << "Material Creation Screen\n";
+	cout << "------------------------\n";
 
+	cout << "ID Number: ";
+	string tempID;
+	getline(cin, tempID);
+	tempProject.material->setIdNumber(tempID);
+
+	tempProject.material->setFilmTitle(tempProject.getTitle());
+	cout << "\nFilm Title: " << tempProject.material->getFilmTitle();
+
+	cout << "\nFormat: ";
+	string tempFormat;
+	getline(cin, tempFormat);
+	tempProject.material->setFormat(tempFormat);
+
+	cout << "\nList of Audio Format: ";
+	cout << "\n1. Dolby";
+	cout << "\n2. Dolby_Digital";
+	cout << "\n3. MPEG_1";
+	cout << "\n4. PCM";
+	cout << "\n5. DTS";
+	cout << "\n6. Others";
+	AudioFormat tempAudioFormat;
+	int tempAudioFormatInput;
+	cin >> tempAudioFormatInput;
+	switch (tempAudioFormatInput)
+	{
+	case 1:
+		tempAudioFormat = AudioFormat::Dolby;
+		break;
+	case 2:
+		tempAudioFormat = AudioFormat::Dolby_Digital;
+		break;
+	case 3:
+		tempAudioFormat = AudioFormat::MPEG_1;
+		break;
+	case 4:
+		tempAudioFormat = AudioFormat::PCM;
+		break;
+	case 5: 
+		tempAudioFormat = AudioFormat::DTS;
+		break;
+	case 6:
+		tempAudioFormat = AudioFormat::Others;
+		break;
+	default:
+		tempAudioFormat = AudioFormat::Others;
+		cout << "\nAudioFormat assumed as Others";
+		break;
+	}
+	tempProject.material->setAudioFormat(tempAudioFormat);
+
+	tempProject.material->setRuntime(tempProject.getRuntime());
+	cout << "\nRuntime: " << tempProject.material->getRuntime();
+
+	tempProject.material->setLanguage(tempProject.getLanguage());
+	cout << "\nLanguage: " << tempProject.material->getLanguage();
+
+	cout << "\nRetail Price: ";
+	float tempRetailPrice;
+	cin >> tempRetailPrice;
+	tempProject.material->setRetailPrice(tempRetailPrice);
+
+	cout << "\nSubtitle: ";
+	string tempSubtitle;
+	getline(cin, tempSubtitle);
+	tempProject.material->setSubtitles(tempSubtitle);
+
+	cout << "\nFrame Aspect: ";
+	float tempFrameAspect;
+	cin >> tempFrameAspect;
+	tempProject.material->setFrameAspect(tempFrameAspect);
+
+	cout << "\nList of Packaging: ";
+	cout << "\n1. SingleSided_DVD";
+	cout << "\n2. DoubleSided_DVD";
+	cout << "\n3. ComboBox";
+	cout << "\n4. VHS";
+	cout << "\n5. BluRay";
+	cout << "\n6. Others";
+	Package tempPackage;
+	int tempPackageInput;
+	cin >> tempPackageInput;
+	switch (tempPackageInput)
+	{
+	case 1:
+		tempPackage = Package::SingleSided_DVD;
+		break;
+	case 2:
+		tempPackage = Package::DoubleSided_DVD;
+		break;
+	case 3:
+		tempPackage = Package::ComboBox;
+		break;
+	case 4:
+		tempPackage = Package::VHS;
+		break;
+	case 5:
+		tempPackage = Package::BluRay;
+		break;
+	case 6:
+		tempPackage = Package::Others;
+		break;
+	default:
+		tempPackage = Package::Others;
+		cout << "\nPackage assumed as Others";
+		break;
+	}
+	tempProject.material->setPackage(tempPackage);
 }
 
 void ConsoleUI::updateProject()

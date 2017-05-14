@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Material.h"
 
 using namespace std;
 
@@ -59,6 +60,10 @@ public:
 	void setCostumeDesigner(string _costumeDesigner);
 	string getCostumeDesigner();
 
+	// pointer to material object
+	Material* material;
+	// assumed one project only will have one material
+	
 private:
 	// variables for project details
 	string title;
@@ -81,6 +86,5 @@ private:
 	string productionDesigner;
 	string setDecorator;
 	string costumeDesigner;
-
 };
 

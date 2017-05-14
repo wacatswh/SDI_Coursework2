@@ -15,7 +15,7 @@ public:
 
 	// below are features in maintenance mode 
 	static void createProject();
-	static void createMaterial();
+	static void createMaterial(Project &tempProject);
 	static void updateProject();
 	static void updateMaterial();
 	static void removeProject();

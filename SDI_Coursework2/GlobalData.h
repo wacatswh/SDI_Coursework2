@@ -6,4 +6,3 @@
 using namespace std;
 
 vector<Project> projects;
-vector<Material> materials;

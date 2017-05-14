@@ -101,3 +101,13 @@ float Material::getFrameAspect()
 {
 	return frameAspect;
 }
+
+void Material::setPackage(Package _package)
+{
+	package = _package;
+}
+
+Package Material::getPackage()
+{
+	return package;
+}
